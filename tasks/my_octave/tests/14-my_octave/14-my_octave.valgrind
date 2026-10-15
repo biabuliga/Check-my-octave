@@ -1,0 +1,15 @@
+==37980== Memcheck, a memory error detector
+==37980== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==37980== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==37980== Command: /home/bianca/octave/check_my_octave/my_octave
+==37980== Parent PID: 37979
+==37980== 
+==37980== 
+==37980== HEAP SUMMARY:
+==37980==     in use at exit: 0 bytes in 0 blocks
+==37980==   total heap usage: 581 allocs, 581 frees, 253,236 bytes allocated
+==37980== 
+==37980== All heap blocks were freed -- no leaks are possible
+==37980== 
+==37980== For lists of detected and suppressed errors, rerun with: -s
+==37980== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

@@ -1,0 +1,35 @@
+
+# Simulator Octave - Manipulare de Matrici in C
+
+## Descriere Generala
+Acest program reprezinta o clona simplificata a programului GNU Octave. 
+Proiectul gestioneaza o colectie dinamica de matrici alocate in memoria heap,
+permitand utilizatorului sa efectueze operatii algebrice si de manipulare
+prin intermediul unor comenzi citite de la tastatura.
+    
+## Structura si Gestiunea Memoriei
+Matricile sunt stocate folosind un tablou dinamic de structuri `matrix_t`.
+La adaugarea unei matrici noi, tabloul principal este extins cu `realloc`.
+La stergere, elementele sunt shiftate la stanga pentru a acoperi golul,
+iar tabloul isi micsoreaza capacitatea. Fiecare matrice contine un pointer
+dublu `data` pentru elemente, alocat si eliberat dinamic linie cu linie.
+
+## Logica Comenzilor
+* `L` (Load): Adauga o matrice noua in colectie. Se aloca spatiu pentru linii
+  si coloane, apoi se citesc elementele.
+* `D` (Dimensions): Afiseaza numarul de linii si coloane pentru indexul cerut.
+* `P` (Print): Afiseaza elementele matricei de la indexul specificat.
+* `C` (Crop): Redimensioneaza matricea in-place. Se citesc noile linii si
+  coloane, apoi se genereaza o matrice temporara decupand valorile cerute.
+  La final, matricea veche este eliberata, iar pointerul este actualizat.
+* `M` (Multiply): Inmulteste doua matrici. Calculele se fac modulo 10007.
+  Rezultatul este adaugat la finalul colectiei ca o noua matrice.
+* `O` (Sort): Sorteaza crescator intreaga colectie folosind Bubble Sort.
+  Criteriul este suma elementelor fiecarei matrici (calculata modulo 10007).
+  La interschimbare se permuta direct structurile `matrix_t`.
+* `T` (Transpose): Transpune matricea data. Se aloca o noua structura de 
+  dimensiuni inverse, se copiaza datele, se elibereaza forma initiala.
+* `F` (Free): Sterge o matrice. Se elibereaza memoria liniilor ei, se muta
+  restul matricilor cu o pozitie la stanga si se da realloc.
+* `Q` (Quit): Elibereaza complet memoria (toate liniile, toate structurile)
+  si opreste executia buclei infinite. Orice alta comanda este ignorata.

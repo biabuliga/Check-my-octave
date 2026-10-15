@@ -1,0 +1,54 @@
+{
+    "name": "my_octave",
+    "deps": [
+        "gcc",
+        "python3",
+        "valgrind"
+    ],
+    "tasks": [
+        {
+            "name": "my_octave",
+            "points": 90,
+            "tests": 29,
+            "points_distribution": {
+                "0": 2,
+                "1": 2,
+                "2": 2,
+                "3": 2,
+                "4": 2,
+                "5": 2,
+                "6": 2,
+                "7": 2,
+                "8": 2,
+                "9": 2,
+                "10": 3,
+                "11": 3,
+                "12": 3,
+                "13": 3,
+                "14": 3,
+                "15": 3,
+                "16": 3,
+                "17": 3,
+                "18": 3,
+                "19": 3,
+                "20": 4,
+                "21": 4,
+                "22": 4,
+                "23": 4,
+                "24": 4,
+                "25": 4,
+                "26": 5,
+                "27": 5,
+                "28": 6
+            },
+            "timeout": 30,
+            "memory": 1073741824,
+            "stdin": true,
+            "stdout": true,
+	        "valgrind": true
+        }
+    ],
+    "coding_style": 20,
+    "penalty_warnings": 5,
+    "penalty_readme": 10
+}
